@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
-    <!-- Fuentes elegantes de Google Fonts para emular estilo corporativo -->
+    <!-- Fuentes premium de Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- ESTILOS GENERALES Y PALETA DE COLORES --- */
+        /* --- VARIABLES DE DISEÑO CORPORATIVO --- */
         :root {
-            --color-primario: #0e1e38; /* Azul profundo corporativo */
-            --color-secundario: #c5a059; /* Dorado institucional */
-            --color-oscuro: #1c1c1c;
-            --color-claro: #f8f9fa;
-            --color-gris: #6c757d;
-            --fuente-titulos: 'Cinzel', serif;
-            --fuente-cuerpo: 'Montserrat', sans-serif;
+            --primary: #0b1325;      /* Azul marino profundo premium */
+            --secondary: #bda06a;    /* Dorado satinado institucional */
+            --text-dark: #1e2329;    /* Gris Oxford para lectura cómoda */
+            --text-light: #64748b;   /* Gris neutro para bajadas */
+            --bg-light: #f8fafc;     /* Fondo gris claro ultra limpio */
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
         }
 
+        /* --- RESETEO GENERAL --- */
         * {
             margin: 0;
             padding: 0;
@@ -29,395 +30,392 @@
         }
 
         body {
-            font-family: var(--fuente-cuerpo);
-            color: var(--color-oscuro);
+            font-family: var(--font-body);
+            color: var(--text-dark);
             background-color: #ffffff;
-            line-height: 1.6;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3 {
-            font-family: var(--fuente-titulos);
-            letter-spacing: 1px;
-        }
-
-        /* --- BARRA DE NAVEGACIÓN (HEADER) --- */
+        /* --- BARRA DE NAVEGACIÓN PREMIUM --- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(14, 30, 56, 0.95);
-            padding: 20px 50px;
+            background-color: rgba(11, 19, 37, 0.98);
+            padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 2px solid var(--color-secundario);
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(189, 160, 106, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
 
-        .logo {
-            color: #ffffff;
-            font-size: 1.1rem;
-            font-weight: 600;
+        .logo-box {
             text-decoration: none;
-            line-height: 1.2;
         }
 
-        .logo span {
-            color: var(--color-secundario);
-            font-size: 0.8rem;
+        .logo-title {
+            color: #ffffff;
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-subtitle {
+            color: var(--secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
             display: block;
-            margin-top: 4px;
-            letter-spacing: 2px;
-            font-family: var(--fuente-cuerpo);
+            margin-top: 2px;
+            font-weight: 500;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
+            gap: 35px;
         }
 
         nav ul li a {
-            color: #ffffff;
+            color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: var(--color-secundario);
+            color: var(--secondary);
         }
 
-        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        /* --- PORTADA (HERO SECTION) --- */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(14, 30, 56, 0.75), rgba(14, 30, 56, 0.85)), 
+            min-height: 100vh;
+            background: linear-gradient(rgba(11, 19, 37, 0.75), rgba(11, 19, 37, 0.9)), 
                         url('https://unsplash.com') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: #ffffff;
-            padding: 0 20px;
+            padding: 120px 20px 60px 20px;
         }
 
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            max-width: 900px;
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            color: #ffffff;
+            font-weight: 400;
+            max-width: 850px;
+            line-height: 1.25;
+            margin-bottom: 25px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
             font-weight: 300;
-            margin-bottom: 40px;
             max-width: 600px;
-            color: #e0e0e0;
+            margin-bottom: 40px;
         }
 
-        .btn-contacto {
-            padding: 12px 35px;
-            border: 2px solid var(--color-secundario);
+        .btn-gold {
+            display: inline-block;
+            padding: 14px 35px;
+            border: 1px solid var(--secondary);
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .btn-contacto:hover {
-            background-color: var(--color-secundario);
-            color: var(--color-primario);
-        }
-
-        /* --- SECCIONES COMUNES --- */
-        section {
-            padding: 100px 10%;
-        }
-
-        .titulo-seccion {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--color-primario);
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .titulo-seccion::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 2px;
-            background-color: var(--color-secundario);
-            margin: 15px auto 0 auto;
-        }
-
-        .bajada-seccion {
-            text-align: center;
-            color: var(--color-gris);
-            margin-bottom: 60px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- SECCIÓN ESTUDIO / NOSOTROS --- */
-        .nosotros-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .nosotros-texto p {
-            margin-bottom: 20px;
-            color: #444444;
-            text-align: justify;
-        }
-
-        .nosotros-valores {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .valor-card {
-            background-color: var(--color-claro);
-            padding: 25px;
-            border-left: 3px solid var(--color-secundario);
-        }
-
-        .valor-card h4 {
-            color: var(--color-primario);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        /* --- SECCIÓN AREAS DE PRÁCTICA --- */
-        #practica {
-            background-color: var(--color-claro);
-        }
-
-        .grid-practicas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card-practica {
-            background-color: #ffffff;
-            padding: 40px 30px;
-            border: 1px solid #e0e0e0;
+            font-weight: 500;
             transition: all 0.3s ease;
+            background: transparent;
         }
 
-        .card-practica:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--color-secundario);
+        .btn-gold:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 10px 20px rgba(189, 160, 106, 0.15);
         }
 
-        .card-practica h3 {
-            color: var(--color-primario);
-            font-size: 1.2rem;
+        /* --- SECCIONES BASE --- */
+        section {
+            padding: 120px 12%;
+            clear: both;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px auto;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 600;
             margin-bottom: 15px;
         }
 
-        .card-practica p {
-            color: var(--color-gris);
+        .section-header .divider {
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            margin: 0 auto 20px auto;
+        }
+
+        .section-header p {
+            color: var(--text-light);
             font-size: 0.95rem;
         }
 
-        /* --- SECCIÓN CONTACTO --- */
-        .contacto-container {
+        /* --- SECCIÓN EL ESTUDIO --- */
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 50px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
 
-        .info-contacto h3 {
-            color: var(--color-primario);
-            margin-bottom: 20px;
+        .about-text p {
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            font-weight: 300;
+            text-align: justify;
         }
 
-        .info-contacto p {
+        .about-text p strong {
+            font-weight: 500;
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .value-item {
+            border-left: 2px solid var(--secondary);
+            padding-left: 25px;
+        }
+
+        .value-item h4 {
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .value-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- SECCIÓN ÁREAS DE PRÁCTICA --- */
+        #practicas {
+            background-color: var(--bg-light);
+        }
+
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .practice-card {
+            background-color: #ffffff;
+            padding: 45px 35px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(11, 19, 37, 0.03);
+        }
+
+        .practice-card h3 {
+            font-family: var(--font-title);
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 15px;
-            color: #444444;
         }
 
-        .form-contacto {
+        .practice-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* --- SECCIÓN CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 70px;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-title);
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .contact-detail-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-detail-item label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-detail-item p {
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .contact-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        .form-contacto .full-width {
+        .form-group.full {
             grid-column: span 2;
         }
 
-        .form-contacto input, .form-contacto textarea {
+        .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            font-family: var(--fuente-cuerpo);
+            padding: 14px 18px;
+            border: 1px solid #e2e8f0;
+            font-family: var(--font-body);
             font-size: 0.9rem;
             outline: none;
+            background-color: var(--bg-light);
+            transition: all 0.3s ease;
         }
 
-        .form-contacto input:focus, .form-contacto textarea:focus {
-            border-color: var(--color-primario);
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--secondary);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(189, 160, 106, 0.1);
         }
 
-        .form-contacto button {
+        .btn-submit {
             grid-column: span 2;
-            padding: 15px;
-            background-color: var(--color-primario);
+            padding: 16px;
+            background-color: var(--primary);
             color: #ffffff;
             border: none;
-            font-family: var(--fuente-cuerpo);
+            font-family: var(--font-body);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .form-contacto button:hover {
-            background-color: #17325c;
-        }
-
-        /* --- PIE DE PÁGINA (FOOTER) --- */
-        footer {
-            background-color: var(--color-primario);
-            color: #ffffff;
-            padding: 40px 10%;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
 
-        footer p {
-            color: #a0a0a0;
+        .btn-submit:hover {
+            background-color: #162442;
         }
 
-        /* --- DISEÑO RESPONSIVO (MÓVILES) --- */
-        @media (max-width: 968px) {
-            header {
-                padding: 20px;
-                flex-direction: column;
-            }
-            nav ul {
-                margin-top: 15px;
-            }
-            nav ul li {
-                margin: 0 15px;
-            }
-            .nosotros-container, .contacto-container {
-                grid-template-columns: 1fr;
-            }
-            .form-contacto .full-width, .form-contacto input, .form-contacto textarea, .form-contacto button {
-                grid-column: span 2;
-            }
-            .hero h2 {
-                font-size: 2rem;
-            }
+        /* --- FOOTER ELEGANTE --- */
+        footer {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 80px 12% 40px 12%;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
-    </style>
-</head>
-<body>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <header>
-        <a href="#" class="logo">
-            RIGANTI, GEILER & MÁRQUEZ ALLURALDE
-            <span>ABOGADOS</span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#estudio">El Estudio</a></li>
-                <li><a href="#practica">Áreas de Práctica</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- PANTALLA PRINCIPAL / HERO -->
-    <section id="inicio" class="hero">
-        <h2>Trayectoria e Innovación al Servicio de Nuestros Clientes</h2>
-<!-- PIE DE PÁGINA (FOOTER) CORPORATIVO -->
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+  <!-- FOOTER ELEGANTE -->
     <footer>
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
-            <div>
-                <h4 style="font-family: var(--fuente-titulos); color: var(--color-secundario); margin-bottom: 15px; font-size: 1rem;">EL ESTUDIO</h4>
-                <p style="font-size: 0.85rem; color: #a0a0a0;">Riganti, Geiler & Márquez Alluralde es una firma legal enfocada en brindar soluciones corporativas de alta complejidad, combinando visión global con solidez local.</p>
+        <div class="footer-top">
+            <div class="footer-col">
+                <h4>LA FIRMA</h4>
+                <p>Riganti, Geiler & Márquez Alluralde Abogados proporciona asesoramiento de alta gama a nivel corporativo nacional y regional, manteniendo los más altos estándares de excelencia en la práctica del derecho.</p>
             </div>
-            <div>
-                <h4 style="font-family: var(--fuente-titulos); color: var(--color-secundario); margin-bottom: 15px; font-size: 1rem;">ÁREAS CLAVE</h4>
-                <ul style="list-style: none; font-size: 0.85rem; line-height: 2;">
-                    <li><a href="#practica" style="color: #a0a0a0; text-decoration: none;">Derecho Corporativo & M&A</a></li>
-                    <li><a href="#practica" style="color: #a0a0a0; text-decoration: none;">Bancos y Finanzas</a></li>
-                    <li><a href="#practica" style="color: #a0a0a0; text-decoration: none;">Litigios Complejos</a></li>
-                    <li><a href="#practica" style="color: #a0a0a0; text-decoration: none;">Compliance Corporativo</a></li>
+            <div class="footer-col">
+                <h4>ÁREAS CLAVE</h4>
+                <ul>
+                    <li><a href="#practicas">Derecho Corporativo</a></li>
+                    <li><a href="#practicas">Bancos & Finanzas</a></li>
+                    <li><a href="#practicas">Litigios Complejos</a></li>
+                    <li><a href="#practicas">Compliance Institucional</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 style="font-family: var(--fuente-titulos); color: var(--color-secundario); margin-bottom: 15px; font-size: 1rem;">ALIANZAS GLOBALES</h4>
-                <p style="font-size: 0.85rem; color: #a0a0a0;">Corresponsalías operativas en los principales centros financieros de América Latina, Estados Unidos y Europa.</p>
+            <div class="footer-col">
+                <h4>VÍNCULOS GLOBALES</h4>
+                <p>Nuestra red internacional nos permite coordinar corresponsalías operativas estratégicas fluidas con los principales mercados de Europa y América.</p>
             </div>
         </div>
-        
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; color: #777777;">
-            <p>© 2026 Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | <a href="#inicio" style="color: var(--color-secundario); text-decoration: none;">Términos de Uso y Privacidad</a></p>
+        <div class="footer-bottom">
+            <p>© 2026 Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | Políticas de Confidencialidad</p>
         </div>
     </footer>
 
-    <!-- INTERACTIVIDAD Y COMPORTAMIENTO (JAVASCRIPT) -->
+    <!-- INTERACTIVIDAD Y OPTIMIZACIÓN VISUAL (JAVASCRIPT) -->
     <script>
-        // 1. Efecto visual dinámico: Reduce el tamaño del menú de navegación al hacer scroll hacia abajo
+        // 1. Reducción dinámica del menú superior al hacer scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.padding = '12px 50px';
-                header.style.backgroundColor = 'rgba(14, 30, 56, 0.98)';
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            if (window.scrollY > 60) {
+                header.style.padding = '15px 8%';
+                header.style.backgroundColor = 'rgba(11, 19, 37, 0.99)';
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
             } else {
-                header.style.padding = '20px 50px';
-                header.style.backgroundColor = 'rgba(14, 30, 56, 0.95)';
-                header.style.boxShadow = 'none';
+                header.style.padding = '25px 8%';
+                header.style.backgroundColor = 'rgba(11, 19, 37, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
             }
         });
 
-        // 2. Animación suave de aparición para las tarjetas de áreas de práctica (Scroll Reveal básico)
-        const tarjetas = document.querySelectorAll('.card-practica');
+        // 2. Animación suave de aparición para las tarjetas (Efecto fade-in controlado)
+        const cards = document.querySelectorAll('.practice-card');
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
+            threshold: 0.15,
+            rootMargin: "0px 0px -40px 0px"
         };
 
-        const observer = new IntersectionObserver(function(entries, observer) {
+        const cardObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+                cardObserver.unobserve(entry.target);
             });
         }, observerOptions);
 
-        tarjetas.forEach(tarjeta => {
-            tarjeta.style.opacity = '0';
-            tarjeta.style.transform = 'translateY(20px)';
-            tarjeta.style.transition = 'all 0.6s ease-out';
-            observer.observe(tarjeta);
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(25px)';
+            card.style.transition = 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+            cardObserver.observe(card);
         });
     </script>
 </body>
