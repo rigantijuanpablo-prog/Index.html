@@ -251,8 +251,7 @@
             font-size: 0.9rem;
             line-height: 1.7;
         }
-
-        /* --- SECCIÓN CONTACTO --- */
+ /* --- SECCIÓN CONTACTO (DENTRO DE STYLE) --- */
         .contenedor-contacto {
             display: grid;
             grid-template-columns: 1fr 1.3fr;
@@ -327,8 +326,122 @@
         .boton-enviar:hover {
             background-color: #1a2a44;
         }
-        /* --- PIE DE PÁGINA (FOOTER) --- */
-     <!-- PIE DE PÁGINA (FOOTER) -->
+
+        /* --- PIE DE PÁGINA (ESTILOS DEL FOOTER) --- */
+        .bloques-footer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .columna-footer h4 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-secundario);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .columna-footer p, .columna-footer ul li a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .columna-footer ul {
+            list-style: none;
+        }
+
+        .columna-footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .columna-footer ul li a:hover {
+            color: var(--color-secundario);
+        }
+
+        @media (max-width: 992px) {
+            .contenedor-contacto { grid-template-columns: 1fr; gap: 40px; }
+            .formulario-contacto input, .formulario-contacto textarea, .boton-enviar { grid-column: span 2; }
+            header { padding: 20px 4%; flex-direction: column; gap: 10px; }
+            nav ul { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECCIÓN ÁREAS DE PRÁCTICA (ESTRUCTURA HTML CORREGIDA) -->
+    <section id="practicas" style="background-color: var(--color-fondo-claro);">
+        <div class="encabezado-seccion">
+            <h2>Áreas de Práctica</h2>
+            <div class="linea-decorativa"></div>
+            <p>Asesoramiento multidisciplinario de alta complejidad para la prevención de contingencias y defensa corporativa.</p>
+        </div>
+        <div class="grid-practicas">
+            <div class="tarjeta-practica">
+                <h3>Derecho Corporativo & M&A</h3>
+                <p>Estructuración de fusiones, adquisiciones, auditorías legales corporativas, contratos complejos y reorganizaciones societarias.</p>
+            </div>
+            <div class="tarjeta-practica">
+                <h3>Bancos & Finanzas</h3>
+                <p>Asesoramiento regulatorio bancario, estructuración de fideicomisos comerciales y operaciones de financiamiento internacional.</p>
+            </div>
+            <div class="tarjeta-practica">
+                <h3>Litigios & Arbitrajes</h3>
+                <p>Resolución y representación ante controversias judiciales complejas de índole comercial, civil y administrativa.</p>
+            </div>
+            <div class="tarjeta-practica">
+                <h3>Derecho Laboral Empresarial</h3>
+                <p>Prevención de contingencias, estructuración de contratos de personal clave y asistencia técnica en negociaciones colectivas.</p>
+            </div>
+            <div class="tarjeta-practica">
+                <h3>Derecho Tributario</h3>
+                <p>Planificación fiscal estratégica corporativa nacional y representación robusta ante inspecciones de organismos fiscales.</p>
+            </div>
+            <div class="tarjeta-practica">
+                <h3>Compliance & Integridad</h3>
+                <p>Diseño e implementación integral de programas institucionales contra el fraude, lavado de activos y gestión de riesgos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO (ESTRUCTURA HTML CORREGIDA) -->
+    <section id="contacto">
+        <div class="encabezado-seccion">
+            <h2>Contacto</h2>
+            <div class="linea-decorativa"></div>
+            <p>Canales institucionales habilitados para coordinar consultas corporativas con nuestro equipo directivo.</p>
+        </div>
+        <div class="contenedor-contacto">
+            <div class="info-contacto">
+                <h3>Sede Central</h3>
+                <div class="bloque-dato">
+                    <label>Ubicación</label>
+                    <p>Av. Corrientes 450, Piso 10, CABA, Argentina.</p>
+                </div>
+                <div class="bloque-dato">
+                    <label>Teléfono Corporativo</label>
+                    <p>+54 (11) 4321-5555</p>
+                </div>
+                <div class="bloque-dato">
+                    <label>Canal Oficial Electrónico</label>
+                    <p>contacto@rigantigeiler.com</p>
+                </div>
+            </div>
+            <div>
+                <form class="formulario-contacto" onsubmit="event.preventDefault(); alert('Su requerimiento institucional ha sido enviado con éxito de manera confidencial.');">
+                    <input type="text" placeholder="Nombre y Apellido" required>
+                    <input type="email" placeholder="Correo corporativo" required>
+                    <div class="campo-ancho"><input type="text" placeholder="Empresa / Entidad Jurídica"></div>
+                    <div class="campo-ancho"><textarea placeholder="Detalle su consulta de forma estrictamente informativa..." rows="5" required></textarea></div>
+                    <button type="submit" class="boton-enviar">Enviar Requerimiento</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (FOOTER HTML) -->
     <footer style="background-color: var(--color-primario); color: #ffffff; padding: 70px 10% 30px 10%; border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="bloques-footer">
             <div class="columna-footer">
@@ -355,7 +468,6 @@
 
     <!-- INTERACTIVIDAD Y OPTIMIZACIÓN VISUAL (JAVASCRIPT) -->
     <script>
-        // 1. Reducción dinámica del menú superior al hacer scroll para mayor elegancia
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
@@ -369,13 +481,8 @@
             }
         });
 
-        // 2. Animación suave de aparición para las tarjetas de áreas de práctica (Scroll Reveal)
         const tarjetasPractica = document.querySelectorAll('.tarjeta-practica');
-        
-        const opcionesObservador = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -40px 0px"
-        };
+        const opcionesObservador = { threshold: 0.15, rootMargin: "0px 0px -40px 0px" };
 
         const observadorTarjetas = new IntersectionObserver(function(entradas, observador) {
             entradas.forEach(entrada => {
@@ -388,7 +495,7 @@
 
         tarjetasPractica.forEach(tarjeta => {
             tarjeta.style.opacity = '0';
-            tarjeta.style.transform = 'translateY(30px)';
+              tarjeta.style.transform = 'translateY(30px)';
             tarjeta.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
             observadorTarjetas.observe(tarjeta);
         });
@@ -406,3 +513,4 @@
     </script>
 </body>
 </html>
+      
