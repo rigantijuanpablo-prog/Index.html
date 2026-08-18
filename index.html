@@ -4,225 +4,470 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
-    <!-- Fuentes corporativas premium -->
+    <!-- Fuentes Tipográficas Premium -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- ESTILOS BASE Y VARIABLES --- */
         :root {
-            --primary: #0b1325;
-            --secondary: #bda06a;
-            --text-dark: #1e2329;
-            --text-light: #64748b;
-            --bg-light: #f8fafc;
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
+            --color-primario: #0b1426;   /* Azul noche corporativo */
+            --color-secundario: #bda06a; /* Dorado satinado institucional */
+            --color-fondo-claro: #f4f6f9;/* Gris ultra claro limpio */
+            --color-texto-oscuro: #212529; /* Gris oxford para lectura cómoda */
+            --color-texto-suave: #6c757d;  /* Gris neutro para subtítulos */
+            --fuente-titulos: 'Cinzel', serif;
+            --fuente-cuerpo: 'Montserrat', sans-serif;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: var(--font-body); color: var(--text-dark); background-color: #ffffff; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-        header { position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(11, 19, 37, 0.98); padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(189, 160, 106, 0.2); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); }
-        .logo-box { text-decoration: none; }
-        .logo-title { color: #ffffff; font-family: var(--font-title); font-size: 1.15rem; font-weight: 600; letter-spacing: 0.5px; }
-        .logo-subtitle { color: var(--secondary); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; display: block; margin-top: 2px; font-weight: 500; }
-        nav ul { display: flex; list-style: none; gap: 35px; }
-        nav ul li a { color: rgba(255, 255, 255, 0.85); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1.5px; transition: color 0.3s ease; }
-        nav ul li a:hover { color: var(--secondary); }
-        .hero { min-height: 100vh; background: linear-gradient(rgba(11, 19, 37, 0.75), rgba(11, 19, 37, 0.9)), url('https://unsplash.com') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px 20px; }
-        .hero h1 { font-family: var(--font-title); font-size: 3rem; color: #ffffff; font-weight: 400; max-width: 850px; line-height: 1.25; margin-bottom: 25px; }
-        .hero p { color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; font-weight: 300; max-width: 600px; margin-bottom: 40px; }
-        .btn-gold { display: inline-block; padding: 14px 35px; border: 1px solid var(--secondary); color: #ffffff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; font-weight: 500; transition: all 0.3s ease; background: transparent; }
-        .btn-gold:hover { background-color: var(--secondary); color: var(--primary); box-shadow: 0 10px 20px rgba(189, 160, 106, 0.15); }
-        section { padding: 120px 12%; clear: both; }
-        .section-header { text-align: center; max-width: 700px; margin: 0 auto 80px auto; }
-        .section-header h2 { font-family: var(--font-title); font-size: 2.2rem; color: var(--primary); font-weight: 600; margin-bottom: 15px; }
-        .section-header .divider { width: 40px; height: 2px; background-color: var(--secondary); margin: 0 auto 20px auto; }
-        .section-header p { color: var(--text-light); font-size: 0.95rem; }
-        .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
-        .about-text p { color: var(--text-dark); margin-bottom: 25px; font-size: 1.05rem; font-weight: 300; text-align: justify; }
-        .values-list { display: grid; grid-template-columns: 1fr; gap: 25px; }
-        .value-item { border-left: 2px solid var(--secondary); padding-left: 25px; }
-        .value-item h4 { font-family: var(--font-title); font-size: 1.15rem; color: var(--primary); margin-bottom: 5px; }
-        .value-item p { color: var(--text-light); font-size: 0.9rem; }
-        #practicas { background-color: var(--bg-light); }
-        .practices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .practice-card { background-color: #ffffff; padding: 45px 35px; border: 1px solid #e2e8f0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .practice-card:hover { transform: translateY(-5px); border-color: var(--secondary); box-shadow: 0 20px 40px rgba(11, 19, 37, 0.03); }
-        .practice-card h3 { font-family: var(--font-title); color: var(--primary); font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; }
-        .practice-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 70px; }
-        .contact-info h3 { font-family: var(--font-title); font-size: 1.6rem; color: var(--primary); margin-bottom: 25px; }
-        .contact-detail-item { margin-bottom: 30px; }
-        .contact-detail-item label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary); margin-bottom: 5px; font-weight: 600; }
-        .contact-detail-item p { color: var(--text-dark); font-size: 1rem; }
-        .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group.full { grid-column: span 2; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; border: 1px solid #e2e8f0; font-family: var(--font-body); font-size: 0.9rem; outline: none; background-color: var(--bg-light); transition: all 0.3s ease; }
-        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--secondary); background-color: #ffffff; box-shadow: 0 0 0 3px rgba(189, 160, 106, 0.1); }
-        .btn-submit { grid-column: span 2; padding: 16px; background-color: var(--primary); color: #ffffff; border: none; font-family: var(--font-body); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; font-weight: 500; cursor: pointer; transition: background 0.3s ease; }
-        .btn-submit:hover { background-color: #162442; }
-        footer { background-color: var(--primary); color: #ffffff; padding: 80px 12% 40px 12%; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 60px; }
-        .footer-col h4 { font-family: var(--font-title); color: var(--secondary); font-size: 1rem; font-weight: 500; margin-bottom: 20px; letter-spacing: 0.5px; }
-        .footer-col p { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; line-height: 1.8; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
-        .footer-col ul li a:hover { color: var(--secondary); }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; text-align: center; font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); }
-        @media (max-width: 992px) { header { padding: 20px 5%; flex-direction: column; gap: 15px; } nav ul { gap: 20px; } section { padding: 80px 5%; } .hero h1 { font-size: 2.2rem; } .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; } }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="#" class="logo-box">
-            <div class="logo-title">RIGANTI, GEILER & MÁRQUEZ ALLURALDE</div>
-            <span class="logo-subtitle">Abogados</span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#estudio">El Estudio</a></li>
-                <li><a href="#practicas">Áreas de Práctica</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="inicio" class="hero">
-        <h1>Trayectoria Legal con una Perspectiva de Vanguardia</h1>
-        <p>Brindamos soluciones jurídicas estratégicas de alta complejidad para empresas y corporaciones que operan en mercados globales dinámicos.</p>
-        <a href="#contacto" class="btn-gold">Agendar consulta confidencial</a>
-    </section>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    <section id="estudio">
-        <div class="section-header">
-            <h2>El Estudio</h2>
-            <div class="divider"></div>
-            <p>Un compromiso absoluto con la excelencia técnica y los más altos estándares éticos de la práctica jurídica internacional.</p>
-        </div>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>Somos una firma de abogados de consulta y litigio complejo, estructurada bajo una filosofía corporativa moderna que prioriza el entendimiento minucioso de los negocios de nuestros representados.</p>
-                <p>Nuestra práctica se caracteriza por la agilidad operativa y un profundo dominio técnico-regulatorio, cualidades que nos permiten estructurar soluciones integrales tanto en la asesoría preventiva diaria como ante los tribunales más exigentes.</p>
-            </div>
-            <div class="values-list">
-                <div class="value-item">
-                    <h4>Rigurosidad Técnica</h4>
-                    <p>Cada dictamen y estrategia procesal es analizada al máximo detalle.</p>
-                </div>
-                <div class="value-item">
-                    <h4>Alcance Corporativo</h4>
-                    <p>Respuestas legales diseñadas para potenciar el crecimiento empresarial comercial.</p>
-                </div>
-                <div class="value-item">
-                    <h4>Transparencia e Integridad</h4>
-                   <section id="practicas">
-        <div class="section-header">
+        body {
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-texto-oscuro);
+            background-color: #ffffff;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN CORPORATIVO --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(11, 20, 38, 0.98);
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(189, 160, 106, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .marca-estudio {
+            text-decoration: none;
+        }
+
+        .nombre-estudio {
+            color: #ffffff;
+            font-family: var(--fuente-titulos);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitulo-estudio {
+            color: var(--color-secundario);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            display: block;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-secundario);
+        }
+
+        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        .hero-principal {
+            min-height: 100vh;
+        background: linear-gradient(rgba(11, 20, 38, 0.75), rgba(11, 20, 38, 0.9)), 
+            url('https://unsplash.com') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 20px 60px 20px;
+        }
+
+        .hero-principal h1 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.8rem;
+            color: #ffffff;
+            font-weight: 400;
+            max-width: 900px;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .hero-principal p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 650px;
+            margin-bottom: 45px;
+        }
+
+        .boton-premium {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--color-secundario);
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .boton-premium:hover {
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+            box-shadow: 0 10px 20px rgba(189, 160, 106, 0.15);
+        }
+
+        /* --- ESTRUCTURA GENERAL DE SECCIONES --- */
+        section {
+            padding: 120px 10%;
+            clear: both;
+        }
+
+        .encabezado-seccion {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 80px auto;
+        }
+
+        .encabezado-seccion h2 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.2rem;
+            color: var(--color-primario);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .encabezado-seccion .linea-decorativa {
+            width: 50px;
+            height: 2px;
+            background-color: var(--color-secundario);
+            margin: 0 auto 20px auto;
+        }
+
+        .encabezado-seccion p {
+            color: var(--color-texto-suave);
+            font-size: 0.95rem;
+        }
+
+        /* --- SECCIÓN EL ESTUDIO --- */
+        .contenedor-estudio {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .texto-estudio p {
+            color: var(--color-texto-oscuro);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .lista-valores {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .tarjeta-valor {
+            border-left: 3px solid var(--color-secundario);
+            padding-left: 25px;
+        }
+
+        .tarjeta-valor h4 {
+            font-family: var(--fuente-titulos);
+            font-size: 1.1rem;
+            color: var(--color-primario);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .tarjeta-valor p {
+            color: var(--color-texto-suave);
+            font-size: 0.9rem;
+        }
+        <!-- SECCIÓN ÁREAS DE PRÁCTICA -->
+    <section id="practicas" style="background-color: var(--color-fondo-claro);">
+        <div class="encabezado-seccion">
             <h2>Áreas de Práctica</h2>
-            <div class="divider"></div>
-            <p>Especialización técnica multidisciplinaria enfocada en mitigar riesgos y blindar patrimonios institucionales.</p>
+            <div class="linea-decorativa"></div>
+            <p>Asesoramiento multidisciplinario de alta complejidad para la prevención de contingencias y defensa corporativa.</p>
         </div>
-        <div class="practices-grid">
-            <div class="practice-card">
+
+        <style>
+            .grid-practicas {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 30px;
+            }
+            .tarjeta-practica {
+                background-color: #ffffff;
+                padding: 45px 35px;
+                border: 1px solid #e2e8f0;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .tarjeta-practica:hover {
+                transform: translateY(-5px);
+                border-color: var(--color-secundario);
+                box-shadow: 0 20px 40px rgba(11, 20, 38, 0.04);
+            }
+            .tarjeta-practica h3 {
+                font-family: var(--fuente-titulos);
+                color: var(--color-primario);
+                font-size: 1.25rem;
+                margin-bottom: 15px;
+                font-weight: 500;
+            }
+            .tarjeta-practica p {
+                color: var(--color-texto-suave);
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+        </style>
+
+        <div class="grid-practicas">
+            <div class="tarjeta-practica">
                 <h3>Derecho Corporativo & M&A</h3>
-                <p>Asesoría en fusiones, adquisiciones, reestructuraciones societarias complejas y estructuración de pactos de socios.</p>
+                <p>Estructuración de fusiones, adquisiciones, auditorías legales corporativas, contratos complejos y reorganizaciones societarias.</p>
             </div>
-            <div class="practice-card">
-                <h3>Bancos & Mercado de Capitales</h3>
-                <p>Finanzas corporativas, diseño de fideicomisos comerciales y cumplimiento regulatorio ante entidades bancarias internacionales.</p>
+            <div class="tarjeta-practica">
+                <h3>Bancos & Finanzas</h3>
+                <p>Asesoramiento regulatorio bancario, estructuración de fideicomisos comerciales y operaciones de financiamiento internacional.</p>
             </div>
-            <div class="practice-card">
-                <h3>Litigios & Controversias</h3>
-                <p>Defensa judicial rigurosa en fueros comerciales, civiles y contencioso-administrativos de gran envergadura.</p>
+            <div class="tarjeta-practica">
+                <h3>Litigios & Arbitrajes</h3>
+                <p>Resolución y representación ante controversias judiciales complejas de índole comercial, civil y administrativa.</p>
             </div>
-            <div class="practice-card">
+            <div class="tarjeta-practica">
                 <h3>Derecho Laboral Empresarial</h3>
-                <p>Auditoría preventiva de riesgos laborales, diseño de políticas internas y negociación de convenios colectivos complejos.</p>
+                <p>Prevención de contingencias, estructuración de contratos de personal clave y asistencia técnica en negociaciones colectivas.</p>
             </div>
-            <div class="practice-card">
+            <div class="tarjeta-practica">
                 <h3>Derecho Tributario</h3>
-                <p>Planificación fiscal corporativa estratégica para la optimización de recursos y defensa en inspecciones fiscales.</p>
+                <p>Planificación fiscal estratégica corporativa nacional y representación robusta ante inspecciones de organismos fiscales.</p>
             </div>
-            <div class="practice-card">
+            <div class="tarjeta-practica">
                 <h3>Compliance & Integridad</h3>
-                <p>Programas de prevención de delitos financieros, lavado de activos y diseño de códigos de conducta empresarial.</p>
+                <p>Diseño e implementación integral de programas institucionales contra el fraude, lavado de activos y gestión de riesgos.</p>
             </div>
         </div>
     </section>
 
+    <!-- SECCIÓN CONTACTO -->
     <section id="contacto">
-        <div class="section-header">
+        <div class="encabezado-seccion">
             <h2>Contacto</h2>
-            <div class="divider"></div>
-            <p>Establezca comunicación con nuestro equipo técnico para consultas profesionales institucionales.</p>
+            <div class="linea-decorativa"></div>
+            <p>Canales institucionales habilitados para coordinar consultas corporativas con nuestro equipo directivo.</p>
         </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Oficinas Centrales</h3>
-                <div class="contact-detail-item">
-                    <label>Dirección</label>
+
+        <style>
+            .contenedor-contacto {
+                display: grid;
+                grid-template-columns: 1fr 1.3fr;
+                gap: 70px;
+            }
+            .info-contacto h3 {
+                font-family: var(--fuente-titulos);
+                font-size: 1.5rem;
+                color: var(--color-primario);
+                margin-bottom: 30px;
+            }
+            .bloque-dato {
+                margin-bottom: 25px;
+            }
+            .bloque-dato label {
+                display: block;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                color: var(--color-secundario);
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+            .bloque-dato p {
+                font-size: 0.95rem;
+            }
+            .formulario-contacto {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .campo-ancho {
+                grid-column: span 2;
+            }
+            .formulario-contacto input, .formulario-contacto textarea {
+                width: 100%;
+                padding: 15px;
+                border: 1px solid #e2e8f0;
+                font-family: var(--fuente-cuerpo);
+                font-size: 0.85rem;
+                outline: none;
+                background-color: var(--color-fondo-claro);
+                transition: all 0.3s;
+            }
+            .formulario-contacto input:focus, .formulario-contacto textarea:focus {
+                border-color: var(--color-secundario);
+                background-color: #ffffff;
+            }
+            .boton-enviar {
+                grid-column: span 2;
+                padding: 16px;
+                background-color: var(--color-primario);
+                color: #ffffff;
+                border: none;
+                font-family: var(--fuente-cuerpo);
+                text-transform: uppercase;
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .boton-enviar:hover {
+                background-color: #1a2a44;
+            }
+            @media (max-width: 992px) {
+                .contenedor-estudio, .contenedor-contacto { grid-template-columns: 1fr; gap: 40px; }
+                .formulario-contacto input, .formulario-contacto textarea, .boton-enviar { grid-column: span 2; }
+                header { padding: 20px 4%; flex-direction: column; gap: 10px; }
+                nav ul { gap: 15px; }
+            }
+        </style>
+
+        <div class="contenedor-contacto">
+            <div class="info-contacto">
+                <h3>Sede Central</h3>
+                <div class="bloque-dato">
+                    <label>Ubicación</label>
                     <p>Av. Corrientes 450, Piso 10, CABA, Argentina.</p>
                 </div>
-                <div class="contact-detail-item">
+                <div class="bloque-dato">
                     <label>Teléfono Corporativo</label>
                     <p>+54 (11) 4321-5555</p>
                 </div>
-                <div class="contact-detail-item">
-                    <label>Email de Enlace</label>
+                <div class="bloque-dato">
+                    <label>Canal Oficial Electrónico</label>
                     <p>contacto@rigantigeiler.com</p>
                 </div>
             </div>
             <div>
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Su consulta ha sido registrada de manera confidencial. Un asociado se comunicará a la brevedad.');">
-                    <div class="form-group"><input type="text" placeholder="Nombre y Apellido" required></div>
-                    <div class="form-group"><input type="email" placeholder="Correo electrónico" required></div>
-                    <div class="form-group full"><input type="text" placeholder="Corporación / Entidad vinculada"></div>
-                    <div class="form-group full"><textarea placeholder="Por favor, redacte una síntesis estrictamente informativa de su caso..." rows="6" required></textarea></div>
-                    <button type="submit" class="btn-submit">Enviar Requerimiento</button>
+                <form class="formulario-contacto" onsubmit="event.preventDefault(); alert('Su requerimiento institucional ha sido enviado con éxito de manera confidencial.');">
+                    <input type="text" placeholder="Nombre y Apellido" required>
+                    <input type="email" placeholder="Correo corporativo" required>
+                    <div class="campo-ancho"><input type="text" placeholder="Empresa / Entidad Jurídica"></div>
+                    <div class="campo-ancho"><textarea placeholder="Detalle su consulta de forma estrictamente informativa..." rows="5" required></textarea></div>
+                    <button type="submit" class="boton-enviar">Enviar Requerimiento</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-top">
-            <div class="footer-col">
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer style="background-color: var(--color-primario); color: #ffffff; padding: 70px 10% 30px 10%; border-top: 1px solid rgba(255,255,255,0.05);">
+        <style>
+            .bloques-footer { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 50px; }
+            .columna-footer h4 { font-family: var(--fuente-titulos); color: var(--color-secundario); font-size: 0.95rem; margin-bottom: 20px; font-weight: 500; }
+            .columna-footer p, .columna-footer ul li a { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; text-decoration: none; }
+            .columna-footer ul { list-style: none; }
+            .columna-footer ul li { margin-bottom: 10px; }
+            .columna-footer ul li a:hover { color: var(--color-secundario); }
+        </style>
+        <div class="bloques-footer">
+            <div class="columna-footer">
                 <h4>LA FIRMA</h4>
-                <p>Riganti, Geiler & Márquez Alluralde Abogados proporciona asesoramiento de alta gama a nivel corporativo nacional y regional, manteniendo los más altos estándares de excelencia en la práctica del derecho.</p>
+                <p>Riganti, Geiler & Márquez Alluralde Abogados proporciona consultoría y defensa legal corporativa institucional de alta complejidad con alcance internacional.</p>
             </div>
-            <div class="footer-col">
+            <div class="columna-footer">
                 <h4>ÁREAS CLAVE</h4>
                 <ul>
                     <li><a href="#practicas">Derecho Corporativo</a></li>
                     <li><a href="#practicas">Bancos & Finanzas</a></li>
                     <li><a href="#practicas">Litigios Complejos</a></li>
-                    <li><a href="#practicas">Compliance Institucional</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>VÍNCULOS GLOBALES</h4>
-                <p>Nuestra red internacional nos permite coordinar corresponsalías operativas estratégicas fluidas con los principales mercados de Europa y América.</p>
+            <div class="columna-footer">
+                <h4>COBERTURA GLOBAL</h4>
+                <p>Mantenemos una red activa de corresponsalías y alianzas estratégicas operativas en las principales capitales de América y Europa.</p>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4);">
             <p>© 2026 Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | Políticas de Confidencialidad</p>
         </div>
     </footer>
 
+    <!-- INTERACTIVIDAD COMPLEMENTARIA -->
     <script>
-        // Reducción dinámica del menú superior al hacer scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 60) {
+            if (window.scrollY > 50) {
                 header.style.padding = '15px 8%';
-                header.style.backgroundColor = 'rgba(11, 19, 37, 0.99)';
-                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-            } else {
-                header.style.padding = '25px 8%';
-                header.style.backgroundColor = 'rgba(11, 19, 37, 0.98)';
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
-            }
+                header.style.backgroundColor = 'rgba(11, 20, 38, 0.99)';
+                // 2. Animación suave de aparición para las tarjetas de áreas de práctica (Scroll Reveal)
+        const tarjetasPractica = document.querySelectorAll('.tarjeta-practica');
+        
+        const opcionesObservador = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const observadorTarjetas = new IntersectionObserver(function(entradas, observador) {
+            entradas.forEach(entrada => {
+                if (!entrada.isIntersecting) return;
+                entrada.target.style.opacity = '1';
+                entrada.target.style.transform = 'translateY(0)';
+                observadorTarjetas.unobserve(entrada.target);
+            });
+        }, opcionesObservador);
+
+        tarjetasPractica.forEach(tarjeta => {
+            tarjeta.style.opacity = '0';
+            tarjeta.style.transform = 'translateY(30px)';
+            tarjeta.style.transition = 'all 0.8fr cubic-bezier(0.16, 1, 0.3, 1)';
+            observadorTarjetas.observe(tarjeta);
         });
+
+        // 3. Validación y feedback visual dinámico para el formulario de contacto institucional
+        const formulario = document.querySelector('.formulario-contacto');
+        if(formulario) {
+            formulario.addEventListener('submit', function() {
+                const boton = formulario.querySelector('.boton-enviar');
+                boton.innerText = "Procesando...";
+                boton.style.opacity = "0.7";
+                boton.style.pointerEvents = "none";
+            });
+        }
     </script>
 </body>
-</html> 
+</html>
+        
