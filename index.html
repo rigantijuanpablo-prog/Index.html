@@ -1,4 +1,360 @@
-    <!-- PIE DE PÁGINA (FOOTER) CORPORATIVO -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
+    <!-- Fuentes elegantes de Google Fonts para emular estilo corporativo -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS GENERALES Y PALETA DE COLORES --- */
+        :root {
+            --color-primario: #0e1e38; /* Azul profundo corporativo */
+            --color-secundario: #c5a059; /* Dorado institucional */
+            --color-oscuro: #1c1c1c;
+            --color-claro: #f8f9fa;
+            --color-gris: #6c757d;
+            --fuente-titulos: 'Cinzel', serif;
+            --fuente-cuerpo: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-oscuro);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fuente-titulos);
+            letter-spacing: 1px;
+        }
+
+        /* --- BARRA DE NAVEGACIÓN (HEADER) --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(14, 30, 56, 0.95);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--color-secundario);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            color: var(--color-secundario);
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 4px;
+            letter-spacing: 2px;
+            font-family: var(--fuente-cuerpo);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-secundario);
+        }
+
+        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(14, 30, 56, 0.75), rgba(14, 30, 56, 0.85)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            max-width: 900px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 600px;
+            color: #e0e0e0;
+        }
+
+        .btn-contacto {
+            padding: 12px 35px;
+            border: 2px solid var(--color-secundario);
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-contacto:hover {
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+        }
+
+        /* --- SECCIONES COMUNES --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--color-primario);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--color-secundario);
+            margin: 15px auto 0 auto;
+        }
+
+        .bajada-seccion {
+            text-align: center;
+            color: var(--color-gris);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- SECCIÓN ESTUDIO / NOSOTROS --- */
+        .nosotros-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .nosotros-texto p {
+            margin-bottom: 20px;
+            color: #444444;
+            text-align: justify;
+        }
+
+        .nosotros-valores {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .valor-card {
+            background-color: var(--color-claro);
+            padding: 25px;
+            border-left: 3px solid var(--color-secundario);
+        }
+
+        .valor-card h4 {
+            color: var(--color-primario);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* --- SECCIÓN AREAS DE PRÁCTICA --- */
+        #practica {
+            background-color: var(--color-claro);
+        }
+
+        .grid-practicas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card-practica {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .card-practica:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--color-secundario);
+        }
+
+        .card-practica h3 {
+            color: var(--color-primario);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .card-practica p {
+            color: var(--color-gris);
+            font-size: 0.95rem;
+        }
+
+        /* --- SECCIÓN CONTACTO --- */
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .info-contacto h3 {
+            color: var(--color-primario);
+            margin-bottom: 20px;
+        }
+
+        .info-contacto p {
+            margin-bottom: 15px;
+            color: #444444;
+        }
+
+        .form-contacto {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-contacto .full-width {
+            grid-column: span 2;
+        }
+
+        .form-contacto input, .form-contacto textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            font-family: var(--fuente-cuerpo);
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .form-contacto input:focus, .form-contacto textarea:focus {
+            border-color: var(--color-primario);
+        }
+
+        .form-contacto button {
+            grid-column: span 2;
+            padding: 15px;
+            background-color: var(--color-primario);
+            color: #ffffff;
+            border: none;
+            font-family: var(--fuente-cuerpo);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-contacto button:hover {
+            background-color: #17325c;
+        }
+
+        /* --- PIE DE PÁGINA (FOOTER) --- */
+        footer {
+            background-color: var(--color-primario);
+            color: #ffffff;
+            padding: 40px 10%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            color: #a0a0a0;
+        }
+
+        /* --- DISEÑO RESPONSIVO (MÓVILES) --- */
+        @media (max-width: 968px) {
+            header {
+                padding: 20px;
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 0 15px;
+            }
+            .nosotros-container, .contacto-container {
+                grid-template-columns: 1fr;
+            }
+            .form-contacto .full-width, .form-contacto input, .form-contacto textarea, .form-contacto button {
+                grid-column: span 2;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header>
+        <a href="#" class="logo">
+            RIGANTI, GEILER & MÁRQUEZ ALLURALDE
+            <span>ABOGADOS</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#estudio">El Estudio</a></li>
+                <li><a href="#practica">Áreas de Práctica</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PANTALLA PRINCIPAL / HERO -->
+    <section id="inicio" class="hero">
+        <h2>Trayectoria e Innovación al Servicio de Nuestros Clientes</h2>
+<!-- PIE DE PÁGINA (FOOTER) CORPORATIVO -->
     <footer>
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
             <div>
