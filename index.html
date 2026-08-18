@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riganti, Geiler & Márquez Alluralde - Abogados</title>
-    <!-- Fuentes Tipográficas Premium -->
+    <!-- Fuentes Corporativas Premium -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- ESTILOS BASE Y VARIABLES --- */
+        /* --- VARIABLES DE ALTA GAMA --- */
         :root {
-            --color-primario: #0b1426;   
-            --color-secundario: #bda06a; 
-            --color-fondo-claro: #f4f6f9;
-            --color-texto-oscuro: #212529; 
-            --color-texto-suave: #6c757d;  
+            --color-primario: #0e1829;   /* Azul noche profundo */
+            --color-secundario: #c5a880; /* Dorado satinado suave */
+            --color-fondo-claro: #f8fafc;/* Fondo gris ultra limpio */
+            --color-texto-oscuro: #1e293b;/* Gris oxford de lectura */
+            --color-texto-suave: #64748b; /* Subtítulos neutros */
             --fuente-titulos: 'Cinzel', serif;
             --fuente-cuerpo: 'Montserrat', sans-serif;
         }
@@ -36,34 +36,87 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- MENÚ DE NAVEGACIÓN --- */
+        /* --- BARRA DE NAVEGACIÓN TRANSLÚCIDA --- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(11, 20, 38, 0.98);
+            background-color: rgba(14, 24, 41, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid rgba(189, 160, 106, 0.2);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            transition: all 0.4s ease;
         }
 
-        .marca-estudio { text-decoration: none; }
-        .nombre-estudio { color: #ffffff; font-family: var(--fuente-titulos); font-size: 1.1rem; font-weight: 500; letter-spacing: 0.5px; }
-        .subtitulo-estudio { color: var(--color-secundario); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 4px; display: block; margin-top: 2px; font-weight: 600; }
+        .marca-estudio {
+            text-decoration: none;
+        }
 
-        nav ul { display: flex; list-style: none; gap: 35px; }
-        nav ul li a { color: rgba(255, 255, 255, 0.85); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1.5px; transition: color 0.3s; }
-        nav ul li a:hover { color: var(--color-secundario); }
+        .nombre-estudio {
+            color: #ffffff;
+            font-family: var(--fuente-titulos);
+            font-size: 1.15rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-        /* --- SECCIÓN PRINCIPAL (HERO) --- */
+        .subtitulo-estudio {
+            color: var(--color-secundario);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            display: block;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-secundario);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-secundario);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* --- PORTADA CON FONDO DE IMAGEN REAL --- */
         .hero-principal {
             min-height: 100vh;
-            background: linear-gradient(rgba(11, 20, 38, 0.75), rgba(11, 20, 38, 0.9)), 
+            background: linear-gradient(rgba(14, 24, 41, 0.75), rgba(14, 24, 41, 0.9)), 
                         url('https://unsplash.com') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -73,56 +126,147 @@
             padding: 140px 20px 60px 20px;
         }
 
-        .hero-principal h1 { font-family: var(--fuente-titulos); font-size: 2.8rem; color: #ffffff; max-width: 900px; line-height: 1.3; margin-bottom: 25px; }
-        .hero-principal p { color: rgba(255, 255, 255, 0.75); font-size: 1.1rem; max-width: 650px; margin-bottom: 45px; font-weight: 300; }
-        .boton-premium { display: inline-block; padding: 15px 40px; border: 1px solid var(--color-secundario); color: #ffffff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; transition: all 0.3s; background: transparent; }
-        .boton-premium:hover { background-color: var(--color-secundario); color: var(--color-primario); }
+        .hero-principal h1 {
+            font-family: var(--fuente-titulos);
+            font-size: 3.2rem;
+            color: #ffffff;
+            font-weight: 400;
+            max-width: 950px;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-        section { padding: 120px 10%; clear: both; }
-        .encabezado-seccion { text-align: center; max-width: 750px; margin: 0 auto 80px auto; }
-        .encabezado-seccion h2 { font-family: var(--fuente-titulos); font-size: 2.2rem; color: var(--color-primario); margin-bottom: 15px; font-weight: 500; }
-        .encabezado-seccion .linea-decorativa { width: 50px; height: 2px; background-color: var(--color-secundario); margin: 0 auto 20px auto; }
-        .encabezado-seccion p { color: var(--color-texto-suave); font-size: 0.95rem; }
+        .hero-principal p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.15rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin-bottom: 50px;
+            letter-spacing: 0.5px;
+        }
 
-        .contenedor-estudio { display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; align-items: center; }
-        .texto-estudio p { color: var(--color-texto-oscuro); margin-bottom: 25px; font-size: 1rem; text-align: justify; }
-        .lista-valores { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .tarjeta-valor { border-left: 3px solid var(--color-secundario); padding-left: 25px; }
-        .tarjeta-valor h4 { font-family: var(--fuente-titulos); font-size: 1.1rem; color: var(--color-primario); margin-bottom: 8px; font-weight: 600; }
-        .tarjeta-valor p { color: var(--color-texto-suave); font-size: 0.9rem; }
+        .boton-premium {
+            display: inline-block;
+            padding: 16px 45px;
+            border: 1px solid var(--color-secundario);
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: transparent;
+            position: relative;
+            z-index: 1;
+        }
 
-        .grid-practicas { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .tarjeta-practica { background-color: #ffffff; padding: 45px 35px; border: 1px solid #e2e8f0; transition: all 0.4s; }
-        .tarjeta-practica:hover { transform: translateY(-5px); border-color: var(--color-secundario); box-shadow: 0 20px 40px rgba(11, 20, 38, 0.04); }
-        .tarjeta-practica h3 { font-family: var(--fuente-titulos); color: var(--color-primario); font-size: 1.25rem; margin-bottom: 15px; }
-        .tarjeta-practica p { color: var(--color-texto-suave); font-size: 0.9rem; line-height: 1.7; }
+        .boton-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--color-secundario);
+            z-index: -1;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-        .contenedor-contacto { display: grid; grid-template-columns: 1fr 1.3fr; gap: 70px; }
-        .info-contacto h3 { font-family: var(--fuente-titulos); font-size: 1.5rem; color: var(--color-primario); margin-bottom: 30px; }
-        .bloque-dato { margin-bottom: 25px; }
-        .bloque-dato label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-secundario); margin-bottom: 5px; font-weight: 600; }
-        .bloque-dato p { font-size: 0.95rem; }
+        .boton-premium:hover {
+            color: var(--color-primario);
+            box-shadow: 0 15px 30px rgba(197, 168, 128, 0.2);
+        }
 
-        .formulario-contacto { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .campo-ancho { grid-column: span 2; }
-        .formulario-contacto input, .formulario-contacto textarea { width: 100%; padding: 15px; border: 1px solid #e2e8f0; font-family: var(--fuente-cuerpo); font-size: 0.85rem; outline: none; background-color: var(--color-fondo-claro); transition: all 0.3s; }
-        .formulario-contacto input:focus, .formulario-contacto textarea:focus { border-color: var(--color-secundario); background-color: #ffffff; }
-        .boton-enviar { grid-column: span 2; padding: 16px; background-color: var(--color-primario); color: #ffffff; border: none; font-family: var(--fuente-cuerpo); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; cursor: pointer; transition: background 0.3s; }
-        .boton-enviar:hover { background-color: #1a2a44; }
+        .boton-premium:hover::before {
+            width: 100%;
+        }
 
-        .bloques-footer { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .columna-footer h4 { font-family: var(--fuente-titulos); color: var(--color-secundario); font-size: 0.95rem; margin-bottom: 20px; font-weight: 500; }
-        .columna-footer p, .columna-footer ul li a { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; text-decoration: none; }
-        .columna-footer ul { list-style: none; }
-        .columna-footer ul li { margin-bottom: 10px; }
-        .columna-footer ul li a:hover { color: var(--color-secundario); }
+        /* --- SECCIONES BASE --- */
+        section {
+            padding: 140px 12%;
+            clear: both;
+        }
 
+        .encabezado-seccion {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 90px auto;
+        }
+
+        .encabezado-seccion h2 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.4rem;
+            color: var(--color-primario);
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .encabezado-seccion .linea-decorativa {
+            width: 40px;
+            height: 1px;
+            background-color: var(--color-secundario);
+            margin: 0 auto 25px auto;
+        }
+
+        .encabezado-seccion p {
+            color: var(--color-texto-suave);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* --- SECCIÓN EL ESTUDIO --- */
+        .contenedor-estudio {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .texto-estudio p {
+            color: var(--color-texto-oscuro);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        .lista-valores {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .tarjeta-valor {
+            border-left: 2px solid var(--color-secundario);
+            padding-left: 30px;
+        }
+
+        .tarjeta-valor h4 {
+            font-family: var(--fuente-titulos);
+            font-size: 1.15rem;
+            color: var(--color-primario);
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .tarjeta-valor p {
+            color: var(--color-texto-suave);
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        /* --- CONFIGURACIÓN RESPONSIVA GENERAL --- */
         @media (max-width: 992px) {
-            .contenedor-estudio, .contenedor-contacto { grid-template-columns: 1fr; gap: 40px; }
-            .formulario-contacto input, .formulario-contacto textarea, .boton-enviar { grid-column: span 2; }
-            header { padding: 20px 4%; flex-direction: column; gap: 10px; }
-            nav ul { gap: 15px; }
-            .hero-principal h1 { font-size: 2rem; }
+            header { padding: 20px 5%; flex-direction: column; gap: 15px; }
+            nav ul { gap: 20px; }
+            section { padding: 100px 5%; }
+            .hero-principal h1 { font-size: 2.2rem; }
+            .contenedor-estudio { grid-template-columns: 1fr; gap: 50px; }
         }
     </style>
 </head>
@@ -163,15 +307,15 @@
             <div class="lista-valores">
                 <div class="tarjeta-valor">
                     <h4>Rigurosidad Técnica</h4>
-                    <p>Cada dictamen y estrategia procesal es analizada al máximo detalle técnico.</p>
+                    <p>Cada dictamen y estrategia procesal es analizada al máximo detalle técnico por nuestros especialistas.</p>
                 </div>
                 <div class="tarjeta-valor">
                     <h4>Alcance Corporativo</h4>
-                    <p>Respuestas legales diseñadas para potenciar y blindar el crecimiento empresarial.</p>
+                    <p>Respuestas legales diseñadas a medida para potenciar y blindar el crecimiento empresarial.</p>
                 </div>
                 <div class="tarjeta-valor">
                     <h4>Transparencia e Integridad</h4>
-                    <p>Estrecha confidencialidad y una ética inquebrantable en cada gestión encomendada.</p>
+                    <p>Estrecha confidencialidad y una ética inquebrantable en cada gestión institucional encomendada.</p>
                 </div>
             </div>
         </div>
@@ -184,6 +328,40 @@
             <div class="linea-decorativa"></div>
             <p>Asesoramiento multidisciplinario de alta complejidad para la prevención de contingencias y defensa corporativa.</p>
         </div>
+        
+        <style>
+            .grid-practicas {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 30px;
+            }
+            .tarjeta-practica {
+                background-color: #ffffff;
+                padding: 50px 40px;
+                border: 1px solid #e2e8f0;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .tarjeta-practica:hover {
+                transform: translateY(-5px);
+                border-color: var(--color-secundario);
+                box-shadow: 0 20px 40px rgba(14, 24, 41, 0.03);
+            }
+            .tarjeta-practica h3 {
+                font-family: var(--fuente-titulos);
+                color: var(--color-primario);
+                font-size: 1.3rem;
+                margin-bottom: 18px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+            }
+            .tarjeta-practica p {
+                color: var(--color-texto-suave);
+                font-size: 0.95rem;
+                line-height: 1.7;
+                font-weight: 300;
+            }
+        </style>
+
         <div class="grid-practicas">
             <div class="tarjeta-practica">
                 <h3>Derecho Corporativo & M&A</h3>
@@ -219,6 +397,83 @@
             <div class="linea-decorativa"></div>
             <p>Canales institucionales habilitados para coordinar consultas corporativas con nuestro equipo directivo.</p>
         </div>
+        
+        <style>
+            .contenedor-contacto {
+                display: grid;
+                grid-template-columns: 1fr 1.3fr;
+                gap: 80px;
+            }
+            .info-contacto h3 {
+                font-family: var(--fuente-titulos);
+                font-size: 1.6rem;
+                color: var(--color-primario);
+                margin-bottom: 35px;
+                font-weight: 500;
+            }
+            .bloque-dato {
+                margin-bottom: 30px;
+            }
+            .bloque-dato label {
+                display: block;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--color-secundario);
+                margin-bottom: 8px;
+                font-weight: 600;
+            }
+            .bloque-dato p {
+                font-size: 1rem;
+                font-weight: 300;
+            }
+            .formulario-contacto {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+            .campo-ancho {
+                grid-column: span 2;
+            }
+            .formulario-contacto input, .formulario-contacto textarea {
+                width: 100%;
+                padding: 16px 20px;
+                border: 1px solid #e2e8f0;
+                font-family: var(--fuente-cuerpo);
+                font-size: 0.9rem;
+                outline: none;
+                background-color: var(--color-fondo-claro);
+                transition: all 0.3s ease;
+                font-weight: 300;
+            }
+            .formulario-contacto input:focus, .formulario-contacto textarea:focus {
+                border-color: var(--color-secundario);
+                background-color: #ffffff;
+                box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.1);
+            }
+            .boton-enviar {
+                grid-column: span 2;
+                padding: 18px;
+                background-color: var(--color-primario);
+                color: #ffffff;
+                border: none;
+                font-family: var(--fuente-cuerpo);
+                text-transform: uppercase;
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .boton-enviar:hover {
+                background-color: #15233c;
+            }
+            @media (max-width: 992px) {
+                .contenedor-contacto { grid-template-columns: 1fr; gap: 50px; }
+                .formulario-contacto input, .formulario-contacto textarea, .boton-enviar { grid-column: span 2; }
+            }
+        </style>
+
         <div class="contenedor-contacto">
             <div class="info-contacto">
                 <h3>Sede Central</h3>
@@ -246,51 +501,101 @@
             </div>
         </div>
     </section>
+    <!-- PIE DE PÁGINA (FOOTER CORPORATIVO PREMIUM) -->
+    <footer style="background-color: var(--color-primario); color: #ffffff; padding: 90px 12% 40px 12%; border-top: 1px solid rgba(255,255,255,0.05);">
+        <style>
+            .bloques-footer {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 50px;
+                margin-bottom: 60px;
+            }
+            .columna-footer h4 {
+                font-family: var(--fuente-titulos);
+                color: var(--color-secundario);
+                font-size: 1rem;
+                margin-bottom: 25px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+            }
+            .columna-footer p, .columna-footer ul li a {
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.85rem;
+                text-decoration: none;
+                line-height: 1.8;
+            }
+            .columna-footer p {
+                font-weight: 300;
+            }
+            .columna-footer ul {
+                list-style: none;
+            }
+            .columna-footer ul li {
+                margin-bottom: 12px;
+            }
+            .columna-footer ul li a {
+                transition: color 0.3s;
+            }
+            .columna-footer ul li a:hover {
+                color: var(--color-secundario);
+            }
+            .footer-base {
+                border-top: 1px solid rgba(255,255,255,0.05);
+                padding-top: 30px;
+                text-align: center;
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.4);
+                font-weight: 300;
+            }
+        </style>
 
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer style="background-color: var(--color-primario); color: #ffffff; padding: 70px 10% 30px 10%; border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="bloques-footer">
             <div class="columna-footer">
                 <h4>LA FIRMA</h4>
-                <p>Riganti, Geiler & Márquez Alluralde Abogados proporciona consultoría y defensa legal corporativa institucional de alta complejidad con alcance internacional.</p>
+                <p>Riganti, Geiler & Márquez Alluralde Abogados proporciona consultoría y defensa legal corporativa institucional de alta complejidad con un firme alcance global.</p>
             </div>
             <div class="columna-footer">
                 <h4>ÁREAS CLAVE</h4>
                 <ul>
-                    <li><a href="#practicas">Derecho Corporativo</a></li>
+                    <li><a href="#practicas">Derecho Corporativo & M&A</a></li>
                     <li><a href="#practicas">Bancos & Finanzas</a></li>
-                    <li><a href="#practicas">Litigios Complejos</a></li>
+                    <li><a href="#practicas">Litigios & Arbitrajes</a></li>
+                    <li><a href="#practicas">Compliance & Integridad</a></li>
                 </ul>
             </div>
             <div class="columna-footer">
                 <h4>COBERTURA GLOBAL</h4>
-                <p>Mantenemos una red activa de corresponsalías y alianzas estratégicas operativas en las principales capitales de América y Europa.</p>
+                <p>Mantenemos una red activa de corresponsalías operativas y alianzas estratégicas en las principales capitales financieras de América y Europa.</p>
             </div>
         </div>
-        <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4);">
-            <p>© 2026 Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | Políticas de Confidencialidad</p>
+        <div class="footer-base">
+            <p>© 2026 Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | Políticas de Privacidad y Confidencialidad</p>
         </div>
     </footer>
 
     <!-- INTERACTIVIDAD Y OPTIMIZACIÓN VISUAL (JAVASCRIPT) -->
     <script>
-        // Reducción dinámica del menú superior al hacer scroll
+        // 1. Efecto visual dinámico para el menú superior al hacer scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.padding = '15px 8%';
-                header.style.backgroundColor = 'rgba(11, 20, 38, 0.99)';
-                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.15)';
+            if (window.scrollY > 60) {
+                header.style.padding = '16px 8%';
+                header.style.backgroundColor = 'rgba(14, 24, 41, 0.99)';
+                header.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.2)';
             } else {
                 header.style.padding = '25px 8%';
-                header.style.backgroundColor = 'rgba(11, 20, 38, 0.98)';
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
+                header.style.backgroundColor = 'rgba(14, 24, 41, 0.95)';
+                header.style.boxShadow = 'none';
             }
         });
 
-        // Animación suave de aparición para las tarjetas de áreas de práctica (Scroll Reveal)
+        // 2. Animación suave de aparición para las tarjetas de áreas de práctica (Scroll Reveal)
         const tarjetasPractica = document.querySelectorAll('.tarjeta-practica');
-        const opcionesObservador = { threshold: 0.15, rootMargin: "0px 0px -40px 0px" };
+        
+        const opcionesObservador = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -40px 0px"
+        };
 
         const observadorTarjetas = new IntersectionObserver(function(entradas, observador) {
             entradas.forEach(entrada => {
@@ -307,6 +612,12 @@
             tarjeta.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
             observadorTarjetas.observe(tarjeta);
         });
+
+        // 3. Forzar el posicionamiento del navegador al inicio de la página al actualizar
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
     </script>
 </body>
 </html>
