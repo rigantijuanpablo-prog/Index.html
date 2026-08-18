@@ -327,20 +327,33 @@
         .boton-enviar:hover {
             background-color: #1a2a44;
         }
-
         /* --- PIE DE PÁGINA (FOOTER) --- */
-        .bloques-footer {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
+     <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer style="background-color: var(--color-primario); color: #ffffff; padding: 70px 10% 30px 10%; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="bloques-footer">
+            <div class="columna-footer">
+                <h4>LA FIRMA</h4>
+                <p>Riganti, Geiler & Márquez Alluralde Abogados proporciona consultoría y defensa legal corporativa institucional de alta complejidad con alcance internacional.</p>
+            </div>
+            <div class="columna-footer">
+                <h4>ÁREAS CLAVE</h4>
+                <ul>
+                    <li><a href="#practicas">Derecho Corporativo</a></li>
+                    <li><a href="#practicas">Bancos & Finanzas</a></li>
+                    <li><a href="#practicas">Litigios Complejos</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h4>COBERTURA GLOBAL</h4>
+                <p>Mantenemos una red activa de corresponsalías y alianzas estratégicas operativas en las principales capitales de América y Europa.</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.4);">
+            <p>© 2026 Riganti, Geiler & Márquez Alluralde - Abogados. Todos los derechos reservados. | Políticas de Confidencialidad</p>
+        </div>
+    </footer>
 
-        .columna-footer h4 {
-            font-family: var(--fuente-titulos);
-            color: var(--color-secundario);
-            font-size: 0.95rem;
-              <!-- INTERACTIVIDAD Y OPTIMIZACIÓN VISUAL (JAVASCRIPT) -->
+    <!-- INTERACTIVIDAD Y OPTIMIZACIÓN VISUAL (JAVASCRIPT) -->
     <script>
         // 1. Reducción dinámica del menú superior al hacer scroll para mayor elegancia
         window.addEventListener('scroll', function() {
